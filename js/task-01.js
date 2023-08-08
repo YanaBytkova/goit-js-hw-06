@@ -1,22 +1,16 @@
 const listWithId = document.querySelector('#categories');
-console.log(listWithId);
+// console.log(listWithId);
 const listWithClass = document.querySelectorAll('.item');
-console.log(listWithClass);
+// console.log(listWithClass);
 
-    console.log("Number of categories:", listWithClass.length);
-// const menuItemsByTagName = document.querySelectorAll("li");
-// console.log(menuItemsByTagName);
-
-    // listWithId.forEach(function(number, index) {
-    //     console.log();
-    // });
+console.log("Number of categories:", listWithClass.length);
+const arrCat = Array.from(listWithClass);
+ 
+arrCat.forEach(function (value) {
+const titleCategory = value.firstElementChild.textContent;
+const listCategory = value.querySelectorAll("li");
+    console.log("Category:", titleCategory);
+    console.log ("Elements:", listCategory.length);
+    });
+      
     
-
-    function showEveryCategories(listWithClass) {
-  
-        listWithClass.forEach(function (element) {
-            console.log("Category:", h2);
-            // console.log ("Elements:", this.ul.length)
-        });
-        return 
-      }
