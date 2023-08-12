@@ -17,7 +17,7 @@ const changeColorClick = () => {
   console.log(str);
   // console.log(selectedOptionValue);
   body.style.backgroundColor = str;
-  console.log(textOutput.style);
+
 }
 
 
