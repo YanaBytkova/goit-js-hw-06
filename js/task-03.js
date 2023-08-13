@@ -16,15 +16,10 @@ const images = [
 const listGallery = document.querySelector('.gallery');
 console.log(listGallery);
 listGallery.classList.add("gallery-style")
-images.forEach (function (value) {
-  const listGalleryUnit = document.createElement("li");
-  const listUnitImage = document.createElement("img");
-  listUnitImage.src = value.url; 
-  listUnitImage.alt = value.alt;
-  listGalleryUnit.insertAdjacentElement('afterbegin', listUnitImage);
-  listGallery.insertAdjacentElement('afterbegin', listGalleryUnit);
-  listGalleryUnit.classList.add("gallery-list");
-  listUnitImage.classList.add("gallery-image");
+const listImages = images.map((image) => `<li class="gallery-list"><img class="gallery-image" src=${image.url} alt=${image.alt}></li>`)
+  .join("");
 
-  
-});
+// console.log(listImages);
+
+listGallery.innerHTML = listImages;
+

@@ -1,7 +1,6 @@
 
 const titleBackgroundColor = document.querySelector('.color');
 const btnChangeColor = document.querySelector('.change-color');
-let str = "";
 const body = document.body;
 const changeColorClick = () => {
   function getRandomHexColor() {
@@ -13,10 +12,8 @@ const changeColorClick = () => {
   let randomColor = getRandomHexColor();
   console.log(randomColor);
   titleBackgroundColor.textContent = randomColor;
-  let str = randomColor;
-  console.log(str);
   // console.log(selectedOptionValue);
-  body.style.backgroundColor = str;
+  body.style.backgroundColor = randomColor;
 
 }
 

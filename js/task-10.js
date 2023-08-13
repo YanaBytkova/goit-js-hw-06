@@ -3,8 +3,6 @@ const createBtn = document.querySelector('button[data-create]');
 const destroyBtn = document.querySelector('button[data-destroy]');
 const mainDiv = document.querySelector('#boxes');
 let amount = 0;
-let boxWidthStr = "";
-let boxHeightStr = "";
 const delta = 10;
 
 inputNumber.addEventListener("input", (event) => {
@@ -14,16 +12,14 @@ inputNumber.addEventListener("input", (event) => {
 
 
 const createBoxes = () => {
-  if (inputNumber.value != "") {
-    for (let i = 1; i <= amount; i += 1) {
+  if (inputNumber.value != "" && ((amount >=1) && (amount <=100))) {
+    for (let i = 0; i < amount; i += 1) {
       const newBox = document.createElement("div");
-      const calcBoxWidth = 20 + delta * i + "px";
-      const calcBoxHeight = 20 + delta * i + "px";
-      let boxWidth = calcBoxWidth;
-      let boxHeight = calcBoxHeight;
-      newBox.style.width = boxWidth;
-      newBox.style.height = boxHeight;
-      newBox.classList.add("new-box");
+      let sizeBoxWidth = 30 + delta * i + "px";
+      let sizeBoxHeight = 30 + delta * i + "px";
+      newBox.style.width = sizeBoxWidth;
+      newBox.style.height = sizeBoxHeight;
+      
       function getRandomHexColor() {
         return `#${Math.floor(Math.random() * 16777215)
           .toString(16)
@@ -35,17 +31,13 @@ const createBoxes = () => {
     }
   }
   else {
-    console.log("Please, enter box's number!")
+    console.log("Please, enter box's number from [1] to [100]!")
   }
 }
   
 const destroyBoxes = () => {
-  const boxForRemove = document.querySelectorAll('.new-box');
-  console.log(boxForRemove);
-  boxForRemove.forEach(function (value) {
-    value.remove();
-  });
-  
+  mainDiv.innerHTML = '';
+  inputNumber.value = '';
   console.log("All creating boxes removed!!!");
 }  
 
