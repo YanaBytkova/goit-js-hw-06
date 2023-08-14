@@ -21,5 +21,5 @@ const listImages = images.map((image) => `<li class="gallery-list"><img class="g
 
 // console.log(listImages);
 
-listGallery.insertAdjacentHTML = listImages;
+listGallery.insertAdjacentHTML('beforeend',listImages);
 
