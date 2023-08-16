@@ -5,7 +5,7 @@ const textOutput = document.querySelector('#text');
 
 setOutput();
 let str = "";
-rangeInput.addEventListener("change", setOutput);
+rangeInput.addEventListener("input", setOutput);
 
 function setOutput() {
     
